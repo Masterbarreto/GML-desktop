@@ -3,6 +3,7 @@ import { createRequire } from 'node:module'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 
+
 const require = createRequire(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -28,12 +29,12 @@ let win: BrowserWindow | null
 
 function createWindow() {
   win = new BrowserWindow({
-    icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
+    icon: path.join(__dirname, '..', 'src', 'assets', 'logo.icon'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.mjs'),
     },
   })
-  
+
   win.setMenuBarVisibility(false);
 
   // Test active push message to Renderer-process.
