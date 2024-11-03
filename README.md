@@ -1,4 +1,4 @@
-crie um README.md mé para meu projeto React+vite+electron : https://github.com/Masterbarreto/GML-desktop use o README.md da verção do expo como basee , essa verção é um aplicativo para que o lugista consiga tbm vender de outra forma sem ser na verção de celular :# Guarda-Meu-Lanche (Versão Beta 1.0.0)
+
 
 O **Guarda-Meu-Lanche** é um aplicativo de venda e gestão de lanches desenvolvido para alunos e lojistas do SENAC. Nosso foco é a diminuição de filas e o melhor aproveitamento do intervalo dos alunos, além de reduzir o desperdício de alimentos pelas lanchonetes do SENAC.
 
