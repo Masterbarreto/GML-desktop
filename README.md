@@ -26,14 +26,14 @@ O **Guarda-Meu-Lanche** é um aplicativo de venda e gestão de lanches desenvolv
 
      ```bash
      cd Guarda-Meu-Lanche
-     npm install
+     npm i
      ```
 
-2. **Inicie o Servidor Expo**:
-   - Execute o aplicativo no Expo:
+2. **Inicie o Servidor vite**:
+   - Execute o aplicativo no vite:
 
      ```bash
-     expo start
+     npm run dev
      ```
 ## Bibliotecas Utilizadas
 
