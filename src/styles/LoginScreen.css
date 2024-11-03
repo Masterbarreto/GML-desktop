@@ -1,0 +1,116 @@
+/* Reset de estilo para todos os elementos */
+* {
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o padding (espaço interno) padrão */
+    box-sizing: border-box; /* Inclui a borda e o padding no cálculo do tamanho total do elemento */
+  }
+  
+  /* Estilo geral para o HTML e o body */
+  html, body {
+    height: 100%; /* Define a altura de ambos para 100% da tela */
+    font-family: Arial, sans-serif; /* Define a fonte padrão do texto */
+    background-color: #000; /* Cor de fundo padrão da página */
+  }
+  
+  /* Contêiner principal que ocupa toda a tela */
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #1c1b1b; /* Cor de fundo do contêiner */
+    color: #fff; /* Define a cor do texto para branco */
+  }
+  
+  /* Logo */
+  .logo {
+    margin-bottom: 30px; /* Adiciona espaço abaixo da logo */
+  }
+  
+  /* Imagem dentro do logo */
+  .logo img {
+    width: 120px; /* Define a largura da imagem da logo */
+    height: auto; /* Ajusta a altura proporcional à largura */
+    border-radius: 50%; /* Deixa a imagem com bordas arredondadas (circular) */
+    background-color: #ffb000; /* Define uma cor de fundo para o círculo */
+    padding: 30px; /* Adiciona um padding interno no círculo */
+  }
+  
+  /* Contêiner do formulário de login/cadastro */
+  .form-container {
+    background-color: #fff; /* Define o fundo branco */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno do contêiner */
+    width: 300px; /* Define a largura do contêiner */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao redor */
+    color: #000; /* Define a cor do texto como preto */
+    display: flex; /* Layout flexível */
+    flex-direction: column; /* Organiza os elementos em uma coluna */
+    align-items: center; /* Centraliza os itens no meio */
+  }
+  
+  /* Título dentro do formulário */
+  .form-container h2 {
+    text-align: center; /* Centraliza o texto do título */
+    color: #333; /* Define uma cor cinza escuro para o título */
+    margin-bottom: 20px; /* Adiciona espaço abaixo do título */
+  }
+  
+  /* Campos de input do formulário */
+  .input {
+    width: 100%; /* Ocupa 100% da largura do contêiner */
+    padding: 10px; /* Espaçamento interno */
+    margin: 10px 0; /* Margem em cima e embaixo de 10px */
+    background-color: #fff; /* Cor de fundo branco para os inputs */
+    border: 1px solid #ccc; /* Borda cinza claro */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    color: #000; /* Cor do texto dentro do input definida como preto */
+    transition: border-color 0.3s ease; /* Transição suave na mudança de cor da borda */
+  }
+  
+  /* Estilo para o input quando há um erro */
+  .input.error {
+    border-color: #ff375b; /* Borda vermelha para indicar erro */
+  }
+  
+  /* Botão principal */
+  .button {
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    padding: 10px; /* Espaçamento interno */
+    background-color: #007bff; /* Fundo azul escuro */
+    color: #fff; /* Texto branco */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Mostra o cursor de mão ao passar por cima */
+    margin-top: 10px; /* Espaço acima do botão */
+    transition: background-color 0.3s ease; /* Transição suave na mudança de cor de fundo */
+  }
+  
+  /* Mudança de cor no hover do botão principal */
+  .button:hover {
+    background-color: #0056b3; /* Fundo azul mais escuro ao passar o mouse */
+  }
+  
+  /* Botão com contorno */
+  .button-outline {
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    padding: 10px; /* Espaçamento interno */
+    background-color: transparent; /* Fundo transparente */
+    color: #007bff; /* Texto azul */
+    border: 1px solid #007bff; /* Borda azul */
+    margin-top: 10px; /* Espaço acima do botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Mostra o cursor de mão */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
+  }
+  
+  /* Mudança de cor no hover do botão de contorno */
+  .button-outline:hover {
+    background-color: #007bff; /* Fundo azul escuro ao passar o mouse */
+    color: #fff; /* Texto branco */
+  }
+  

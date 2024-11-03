@@ -10,10 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
+    "cors": "^2.8.5",
     "gml-desktop": "file:",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "vite-tsconfig-paths": "^5.0.1"
+    "react-hook-form": "^7.53.1",
+    "react-router-dom": "^6.27.0",
+    "vite-tsconfig-paths": "^5.0.1",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",
