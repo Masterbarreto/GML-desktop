@@ -1,0 +1,146 @@
+/* Reset de estilo para todos os elementos */
+* {
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o padding (espaço interno) padrão */
+    box-sizing: border-box; /* Inclui a borda e o padding no cálculo do tamanho total do elemento */
+}
+
+/* Estilo geral para o HTML e o body */
+html, body {
+    height: 100%; /* Define a altura de ambos para 100% da tela */
+    font-family: Arial, sans-serif; /* Define a fonte padrão do texto */
+    background-color: #000; /* Cor de fundo padrão da página */
+}
+
+/* Contêiner principal que ocupa toda a tela */
+.register-container {
+    max-width: 400px; /* Largura máxima do contêiner */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #fff; /* Cor de fundo do contêiner */
+    color: #000; /* Cor do texto */
+}
+
+/* Estilo para o formulário de cadastro */
+.register-form .form-group {
+    margin-bottom: 15px; /* Margem entre os grupos do formulário */
+}
+
+.register-form label {
+    display: block; /* Exibe o label como um bloco */
+    margin-bottom: 5px; /* Margem abaixo do label */
+}
+
+/* Campos de input do formulário */
+.register-form input, 
+.register-form select {
+    width: 100%; /* Largura total */
+    padding: 8px; /* Padding */
+    margin-top: 4px; /* Margem acima do input */
+    border: 1px solid #ccc; /* Borda padrão */
+    border-radius: 4px; /* Bordas arredondadas */
+}
+
+/* Estilo para inputs com erro */
+.register-form input.error, .register-form select.error {
+    border-color: #ff375b; /* Borda vermelha para indicar erro */
+}
+
+.error {
+    color: red; /* Cor da mensagem de erro */
+    font-size: 0.9em; /* Tamanho da fonte menor */
+    margin-left: 1px; /* Margem à esquerda */
+}
+
+.error-message {
+    color: red; /* Mensagem de erro em vermelho */
+    font-weight: bold; /* Texto em negrito */
+    margin-bottom: 15px; /* Margem abaixo da mensagem */
+}
+
+/* Estilo do botão de submissão */
+.submit-button {
+    width: 100%; /* Largura total */
+    padding: 10px; /* Padding */
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white; /* Cor do texto branco */
+    border: none; /* Remove a borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro */
+}
+
+.submit-button:hover {
+    background-color: #45a049; /* Cor mais escura no hover */
+}
+  /* Campos de input do formulário */
+  .input {
+    flex: 1;
+    width: 100%; /* Ocupa 100% da largura do contêiner */
+    padding: 10px; /* Espaçamento interno */
+    margin: 10px 0; /* Margem em cima e embaixo de 10px */
+    background-color: #fff; /* Cor de fundo branco para os inputs */
+    border: 1px solid #ccc; /* Borda cinza claro */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    color: #ffff; /* Cor do texto dentro do input definida como preto */
+    transition: border-color 0.3s ease; /* Transição suave na mudança de cor da borda */
+  }
+  .register-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    text-align: center;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.input,
+.calendar-input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #000;
+    transition: border-color 0.3s ease;
+}
+
+.input.error,
+.calendar-input.error,
+select.error {
+    border-color: #ff375b; /* Borda vermelha para indicar erro */
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.data {
+    background-color: #ffff;
+}

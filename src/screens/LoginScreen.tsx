@@ -4,9 +4,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import '../styles/LoginScreen.css';
 import logoImage from '../assets/icon.png';
+import { useNavigate } from 'react-router-dom';
 
 interface LoginScreenProps {
-  onLoginSuccess: (type: string) => void; // Define que onLoginSuccess é uma função que recebe um string
+  onLoginSuccess: (type: string) => void; // Define que onLoginSuccess é uma função que recebe uma string
 }
 
 // Validação do formulário usando Yup
@@ -23,6 +24,8 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
       password: '',
     },
   });
+
+  const navigate = useNavigate();
 
   const showAlert = (message: string) => {
     window.alert(message);
@@ -97,7 +100,11 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
             )}
           />
           <button type="submit" className="button">Entrar</button>
-          <button type="button" onClick={() => {/* Lógica para trocar para a tela de cadastro */}} className="button-outline">
+          <button 
+            type="button" 
+            onClick={() => navigate('/cadastro')}  // Use o hook useNavigate para redirecionar
+            className="button-outline"
+          >
             Criar Conta
           </button>
         </form>
