@@ -50,7 +50,7 @@ html, body {
 .error {
     color: red; /* Cor da mensagem de erro */
     font-size: 0.9em; /* Tamanho da fonte menor */
-    margin-left: 1px; /* Margem à esquerda */
+    margin-left: 4px; /* Margem à esquerda */
 }
 
 .error-message {
@@ -105,7 +105,7 @@ h2 {
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .input,

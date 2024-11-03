@@ -33,6 +33,8 @@ const Register = () => {
             role: "",
         },
         validationSchema,
+        validateOnBlur: false,
+        validateOnChange: false,
         onSubmit: async (values) => {
             try {
                 const response = await axios.post("http://192.168.0.89:4000/api/v1/users", {
@@ -45,12 +47,20 @@ const Register = () => {
                 });
                 
                 navigate('/');
-                alert(`Usuário criado `);
+                alert(`Usuário criado`);
             } catch (error) {
                 console.error("Erro ao criar conta", error.response?.data);
-                setErrorMessage(
-                    error.response?.data.errors ? error.response.data.errors.join(", ") : "Erro ao criar conta"
-                );
+                
+                // Define erros específicos para cada campo com `setFieldError`
+                if (error.response?.data.errors) {
+                    const errors = error.response.data.errors;
+                    for (const [field, message] of Object.entries(errors.body || {})) {
+                        formik.setFieldError(field, message);
+                    }
+                    setErrorMessage("Erro ao criar conta");
+                } else {
+                    setErrorMessage("Erro ao criar conta");
+                }
             }
         },
     });
@@ -60,7 +70,7 @@ const Register = () => {
             <h2>Cadastro</h2>
             <form onSubmit={formik.handleSubmit} className="register-form">
                 <div className="form-group">
-                    
+                    {formik.touched.name && formik.errors.name ? <div className="error">{formik.errors.name}</div> : null}
                     <input
                         type="text"
                         name="name"
@@ -68,21 +78,19 @@ const Register = () => {
                         onChange={formik.handleChange}
                         value={formik.values.name}
                     />
-                    {formik.errors.name ? <div className="error">{formik.errors.name}</div> : null}
                 </div>
                 <div className="form-group">
-                    
+                    {formik.touched.email && formik.errors.email ? <div className="error">{formik.errors.email}</div> : null}
                     <input
                         type="email"
                         name="email"
-                        placeholder="email"
+                        placeholder="Email"
                         onChange={formik.handleChange}
                         value={formik.values.email}
                     />
-                    {formik.errors.email ? <div className="error">{formik.errors.email}</div> : null}
                 </div>
                 <div className="form-group">
-                    
+                    {formik.touched.password && formik.errors.password ? <div className="error">{formik.errors.password}</div> : null}
                     <input
                         type="password"
                         name="password"
@@ -90,10 +98,9 @@ const Register = () => {
                         onChange={formik.handleChange}
                         value={formik.values.password}
                     />
-                    {formik.errors.password ? <div className="error">{formik.errors.password}</div> : null}
                 </div>
                 <div className="form-group">
-                    
+                    {formik.touched.confirmPassword && formik.errors.confirmPassword ? <div className="error">{formik.errors.confirmPassword}</div> : null}
                     <input
                         type="password"
                         name="confirmPassword"
@@ -101,21 +108,19 @@ const Register = () => {
                         onChange={formik.handleChange}
                         value={formik.values.confirmPassword}
                     />
-                    {formik.errors.confirmPassword ? <div className="error">{formik.errors.confirmPassword}</div> : null}
                 </div>
                 <div className="form-group">
-                    
+                    {formik.touched.birthdate && formik.errors.birthdate ? <div className="error">{formik.errors.birthdate}</div> : null}
                     <input
                         type="date"
-                        name="birthdates"
+                        name="birthdate"
                         className="Data"
                         onChange={formik.handleChange}
                         value={formik.values.birthdate}
                     />
-                    {formik.errors.birthdate ? <div className="error">{formik.errors.birthdate}</div> : null}
                 </div>
                 <div className="form-group">
-                    
+                    {formik.touched.cpf && formik.errors.cpf ? <div className="error">{formik.errors.cpf}</div> : null}
                     <input
                         type="text"
                         name="cpf"
@@ -123,31 +128,28 @@ const Register = () => {
                         onChange={formik.handleChange}
                         value={formik.values.cpf}
                     />
-                    {formik.errors.cpf ? <div className="error">{formik.errors.cpf}</div> : null}
                 </div>
                 <div className="form-group">
-                    
+                    {formik.touched.role && formik.errors.role ? <div className="error">{formik.errors.role}</div> : null}
                     <select
                         name="role"
                         onChange={formik.handleChange}
                         value={formik.values.role}
                     >
                         <option value="">Selecione</option>
-                        <option value="Aluno">Aluno</option>
                         <option value="Funcionário">Funcionário</option>
                         <option value="Administrador">Administrador</option>
                     </select>
-                    {formik.errors.role ? <div className="error">{formik.errors.role}</div> : null}
                 </div>
                 {errorMessage && <div className="error-message">{errorMessage}</div>}
 
                 <button type="submit" className="submit-button">Cadastrar</button>
                 <button 
                     type="button" 
-                    onClick={() => navigate('/')}  // Use o hook useNavigate para redirecionar
+                    onClick={() => navigate('/')}
                     className="button-outline"
                 >
-                Voltar
+                    Voltar
                 </button>
             </form>
         </div>
